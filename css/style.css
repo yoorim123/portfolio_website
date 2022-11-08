@@ -1,0 +1,547 @@
+.toggle {
+  position: fixed; /* 우측 상단에 고정*/
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--accent-color) url(../img/menu.png);
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.toggle.active {
+  background: var(--accent-color) url(../img/close.png);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+section {
+  padding: 100px;
+  min-height: 100vh;
+}
+
+/********* Home ********/
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.banner .imgSidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px; /*사진 넓이 기준*/
+  height: 100%;
+}
+
+.banner .imgSidebar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner .contentBx,
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 600px); /*왼쪽 콘텐츠 영역 계산*/
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+.lotoText {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  font-size: 1.5em;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+}
+
+.lotoText span {
+  color: var(--accent-color);
+}
+
+.banner .contentBx h4 {
+  font-size: 1.8em;
+  color: #333;
+  font-weight: 300;
+}
+.banner .contentBx h4 span {
+  font-size: 0.8em;
+  font-weight: 500
+}
+
+.banner .contentBx h2 {
+  font-size: 3em;
+  color: #333;
+  line-height: 1.1em;
+}
+
+.banner .contentBx h2 span,
+p span {
+  color: var(--accent-color);
+}
+
+p{
+  font-size: 1.1em;
+  line-height: 1.4em;
+  margin: 20px 0;
+}
+
+.btn{
+  background-image: linear-gradient(to left, #b5d681, #578b7b, #b5d681);
+  color: var(--background-color);
+  padding: 12px 40px;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 30px;
+  background-size: 200%;
+  transition: 0.6s;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.btn:hover {
+  background-position: right;
+}
+
+.sidebar {
+  position: fixed;
+  background-color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px;
+  z-index: 100;
+  right: -100%; /* 옆으로 아웃 */
+}
+
+.sidebar.active {
+  right: 0; /* 다시 인*/
+}
+
+.sidebar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* 세로 방향으로 정렬 - 주의 */
+}
+
+.sidebar ul a {
+  color: var(--background-color);
+  font-size: 2em;
+  margin: 15px 0;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+.sidebar ul a:hover {
+  color: var(--sub-color);
+  transition: 0.6s;
+}
+
+.banner .contentBx::before {
+  content: 'Nice to meet you!';
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  color: var(--text-color);
+  opacity: 0.15;
+  font-size: 5em;
+  font-weight: 800;
+}
+
+/********* About ********/
+.title {
+  width: 100%;
+  text-align: center;
+}
+
+.title h2 {
+  position: relative;
+  color: var(--accent-color);
+  font-size: 1.8em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.title p {
+  max-width: 700px;
+  display: inline-block;
+}
+
+.title h2::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 60px;
+  height: 4px;
+  background-color: var(--text-color);
+  /* 밑줄 바*/
+}
+
+.title.white h2,
+.title.white p {
+  color: var(--text-color);
+}
+
+.about {
+  background-color: #dcd5d5;
+}
+
+.about .content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.about .content .textBx {
+  min-width: 49%;
+  width: 49%;  
+} 
+
+.about .content .textBx p {
+  color: var(--text-color);
+}
+
+.about .content .textBx p span,
+.about .content .textBx ul {
+  font-size: 1.1em;
+  line-height: 2em;
+}
+
+.about .content .textBx p i,
+.about .content .textBx ul i {
+  color: var(--accent-color);
+}
+
+.about .content .textBx ul i {
+  font-size: 1.25em;
+}
+
+.about .content .textBx ul li {
+  font-weight: 700;
+}
+
+.about .content .imgBx {
+  margin-left: 40px;
+}
+
+.about .content .imgBx img {
+  max-width: 100%; /* 최대! */
+}
+
+/********* Skills ********/
+.services .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.services .content .servicesBx {
+  padding: 40px 20px;
+  max-width: 340px;
+  margin: 20px;
+  transition: 0.5s;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.services .content .servicesBx:hover {
+  background-color: var(--accent-color);
+}
+
+.services .content .servicesBx i {
+  font-size: 2em;
+  line-height: 1.5em;
+  transition: 0.6s;
+  /* max-width: 80px; */
+}
+
+.services .content .servicesBx:hover i {
+  filter: invert(1); /* 이미지 샘플 반전*/
+}
+
+.services .content .servicesBx h2 {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.services .content .servicesBx:hover h2 {
+  color: var(--background-color);
+}
+
+.services .content .servicesBx p {
+  margin: 0;
+  transition: 0.5s;
+}
+
+.services .content .servicesBx:hover p {
+  color: var(--background-color);
+}
+
+/********* Portfolio(Work) ********/
+.work .content{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.work .content .workBx {
+  position: relative;
+  width: 500px; /*300px*/
+  height: 500px; /*300px*/
+  margin: 20px;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.work .content .workBx .imgBx,
+.work .content .workBx .textBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.work .content .workBx .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: conver; /* 잘 확인하기 */
+  box-shadow: 6px 4px 5px #e6e6e6;
+}
+
+.work .content .workBx:nth-child(2) .imgBx img,
+.work .content .workBx:nth-child(3) .imgBx img,
+.work .content .workBx:nth-child(4) .imgBx img  {
+  border: 1px solid #e6e6e6;
+}
+
+
+.work .content .workBx .textBx {
+  background: var(--text-color);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.work .content .workBx:hover .textBx {
+  opacity: 1;
+}
+
+.work .content .workBx .textBx h3 {
+  color: var(--background-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+.work .content .workBx .textBx h3 span {
+  color: #ee7625;
+  font-size: 1.05em;
+}
+
+
+/********* footer ********/
+footer {
+  position: relative; /* 기준! */
+  min-height: 100vh;
+}
+
+.footerBx {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--text-color);
+  height: auto;
+  /* width: 100vw; */
+  padding-top: 60px;
+}
+
+.footerBx .footer-content h3,
+.footerBx .footer-content p,
+.footerBx .footer-content .sci li i,
+.footerBx .footer-bottom p{
+  color: var(--background-color);
+}
+
+.footerBx .footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footerBx .footer-content h3 {
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.footerBx .footer-content h2 {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 2em;
+
+}
+
+.footerBx .footer-content h2 a {
+  color: var(--accent-color);
+}
+
+.footerBx .footer-content h2:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+}
+
+.footerBx .footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 1.5em;
+}
+
+.footerBx .footer-content .sci {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em 0;
+}
+
+.footerBx .footer-content .sci li {
+  margin:  0 20px;
+}
+
+.footerBx .footer-content .sci li a i {
+  font-size: 1.4em;
+  transition: 0.4s ease;
+}
+
+.footerBx .footer-content .sci li a:hover i {
+  color: var(--accent-color);
+}
+
+.footerBx .footer-bottom p {
+  color: #e6e6e6;
+  opacity: 0.2;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.9em;
+  text-transform: capitalize;
+}
+
+/* animation */
+.box{
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+.box span{
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid var(--accent-color);
+  border-right: 2px solid var(--accent-color);
+  transform: rotate(45deg);  
+  margin: -10px;
+  animation: scroll 3s infinite;
+}
+.box span:nth-child(2){
+  animation-delay: -0.2s;
+}
+.box span:nth-child(3){
+  animation-delay: -0.4s;
+}
+/* 위의 방식으로 순서에 차등을 줘서 효과를 나타낼 수 있음 */
+@keyframes scroll{
+  0%{
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50%{
+    opacity: 1;
+  } 
+  100%{
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
+/********* Responsive Website ********/
+@media (max-width: 1388px) {
+  .banner .contentBx::before {
+    font-size: 2.3em;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner .imgSidebar {
+    display: none;
+  }
+  .banner .contentBx, 
+  .sidebar {
+    width: 100%;
+    padding: 30px;
+  }
+  .lotoText {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  .toggle {
+    right: 30px;
+  }
+  section {
+    padding: 40px;
+    min-height: 100vh;
+  }
+  .about .content {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .about .content .textBx {
+    min-width: 100%;
+    width: 100%;
+  }
+  .about .content .imgBx {
+    margin-left: 0;
+  }
+  .services .content .servicesBx {
+    padding: 30px 20px;
+    max-width: 340px;
+    margin: 10px;
+  }
+}
